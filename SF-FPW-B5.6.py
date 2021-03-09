@@ -11,7 +11,7 @@ def greet():
   print("Игра «Крестики-нолики»")
   print(" ввод: ширина и длина ")
 
-def show_space(space):
+def show_space():
   print("--------")
   print("_ 0 1 2 ")
   for i in range(3):
@@ -96,7 +96,7 @@ space = [["-"] * 3 for i in range(3)]
 count = 0
 while True:
   count += 1
-  show_space(space)
+  show_space()
   if count % 2 == 1:
     print(f"Ход {count}. Ходит «крестик»!")
   else:
@@ -111,13 +111,13 @@ while True:
     space[depth][width] = "o"
   
   if check_win():
-    show_space(space)
+    show_space()
     print("конец игры...")
     break
   
   # all cells are filled
   if count == 9:
-    show_space(space)
+    show_space()
     print("Ничья!")
     break
 
